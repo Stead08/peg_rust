@@ -17,7 +17,7 @@ pub enum Node {
     /** 変数代入 **/
     SetVar(String, Box<Node>),
     /** 変数参照 **/
-    GetVar(String)
+    GetVar(String),
 }
 
 impl Node {
@@ -29,5 +29,4 @@ impl Node {
     pub fn if_(cond: Node, t: Vec<Node>, f: Vec<Node>) -> Node {
         Node::If(Box::new(cond), t, f)
     }
-
 }

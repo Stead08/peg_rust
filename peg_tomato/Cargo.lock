@@ -3,6 +3,12 @@
 version = 3
 
 [[package]]
+name = "anyhow"
+version = "1.0.75"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6"
+
+[[package]]
 name = "peg"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -33,6 +39,7 @@ checksum = "36bae92c60fa2398ce4678b98b2c4b5a7c61099961ca1fa305aec04a9ad28922"
 name = "peg_tomato"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "peg",
 ]
 

@@ -1,5 +1,5 @@
-use peg;
 use crate::node::Node;
+use peg;
 
 // トマト言語の文法定義
 peg::parser!( pub grammar tomato() for str {
@@ -43,7 +43,7 @@ peg::parser!( pub grammar tomato() for str {
 
     // for文の定義
     rule for() -> Node
-    = "for" _ w:word() _ "=" + start:number() _ "to" _ end:number() _ body:block()
+    = "for" _ w:word() _ "=" _ start:number() _ "to" _ end:number() _ body:block()
     {Node::For(w, start, end, body)}
 
     // 代入文の定義
@@ -87,5 +87,5 @@ peg::parser!( pub grammar tomato() for str {
     // 文の区切り
     rule end_of_line() = [';' | '\n']+ _
     rule lf() = _ ['\n']* _
-    rule _ = ['' | '\t']*
+    rule _ = [' ' | '\t']*
 });
